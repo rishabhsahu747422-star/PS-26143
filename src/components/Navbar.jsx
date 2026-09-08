@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import { projectMeta } from '../data/projectData';
-import { Menu, X, ExternalLink, ShieldCheck, Sparkles } from 'lucide-react';
+import React, { useState } from "react";
+import { projectMeta } from "../data/projectData";
+import { Menu, X, ExternalLink, ShieldCheck, Sparkles } from "lucide-react";
 
 export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Our Journey', href: '#journey' },
-    { name: 'Evidence', href: '#evidence' },
-    { name: 'Prototype', href: '#prototype' },
-    { name: 'Team', href: '#team' },
+    { name: "Evidence", href: "#evidence" },
+    { name: "Prototype", href: "#prototype" },
+    { name: "Team", href: "#team" },
   ];
 
   const handleNavClick = (href) => {
     setMobileMenuOpen(false);
     if (onNavigate) {
-      onNavigate(href.replace('#', ''));
+      onNavigate(href.replace("#", ""));
     }
   };
 
@@ -23,11 +22,10 @@ export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-borderSlate shadow-xs transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18">
-          
           {/* Left: Branding & Team ID */}
           <div className="flex items-center space-x-3">
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="group flex items-center space-x-3 text-mainText hover:opacity-90 transition-opacity"
             >
               {/* Emblem / Badge */}
@@ -38,7 +36,9 @@ export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
                     <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
                     <span className="w-1.5 h-1.5 rounded-full bg-indiaGreen"></span>
                   </div>
-                  <span className="text-[9px] font-extrabold text-blue-400 tracking-wider mt-0.5">SIH</span>
+                  <span className="text-[9px] font-extrabold text-blue-400 tracking-wider mt-0.5">
+                    SIH
+                  </span>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
 
             {/* Research Docs Quick Action */}
             <button
-              onClick={() => onOpenDoc && onOpenDoc('01-problem-understanding')}
+              onClick={() => onOpenDoc && onOpenDoc("01-problem-understanding")}
               className="px-3 py-1.5 text-xs font-semibold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200/80 rounded-md border border-slate-200 transition-colors flex items-center space-x-1.5 ml-2"
             >
               <ShieldCheck className="w-3.5 h-3.5 text-primaryBlue" />
@@ -85,12 +85,14 @@ export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
 
           {/* Right: Live Updates Badge */}
           <div className="hidden sm:flex items-center space-x-3">
-            <div 
+            <div
               title="Verified live progress feed from Team 26175"
               className="flex items-center space-x-2 px-3 py-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-full text-xs font-semibold tracking-wide shadow-2xs"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-live-pulse"></span>
-              <span className="tracking-wide uppercase text-[11px]">Live Updates</span>
+              <span className="tracking-wide uppercase text-[11px]">
+                Live Updates
+              </span>
             </div>
           </div>
 
@@ -105,10 +107,13 @@ export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
               className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
-
         </div>
       </div>
 
@@ -139,7 +144,7 @@ export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenDoc && onOpenDoc('01-problem-understanding');
+                onOpenDoc && onOpenDoc("01-problem-understanding");
               }}
               className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-primaryBlue bg-blue-50 rounded-lg border border-blue-200"
             >
