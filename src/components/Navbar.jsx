@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { projectMeta } from "../data/projectData";
 import { Menu, X, ExternalLink, ShieldCheck, Sparkles } from "lucide-react";
+import sih from "../assets/image.png";
 
 export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,16 +30,9 @@ export default function Navbar({ onOpenDoc, activeSection, onNavigate }) {
               className="group flex items-center space-x-3 text-mainText hover:opacity-90 transition-opacity"
             >
               {/* Emblem / Badge */}
-              <div className="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center shadow-xs border border-slate-700/50 group-hover:border-primaryBlue transition-colors">
+              <div className=" rounded-lg bg-white flex items-center justify-center group-hover:border-primaryBlue transition-colors">
                 <div className="flex flex-col items-center justify-center">
-                  <div className="flex space-x-1 items-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-saffron"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-indiaGreen"></span>
-                  </div>
-                  <span className="text-[9px] font-extrabold text-blue-400 tracking-wider mt-0.5">
-                    SIH
-                  </span>
+                  <img src={sih} alt="" className="h-14 w-14" />
                 </div>
               </div>
 
