@@ -1,36 +1,37 @@
-import React, { useState } from 'react';
-import { evidenceItems } from '../data/projectData';
-import { 
-  Filter, 
-  Image as ImageIcon, 
-  Video, 
-  FileText, 
-  Users, 
-  ExternalLink, 
-  ArrowRight, 
-  Calendar, 
-  ShieldCheck, 
-  Play, 
-  Eye, 
+import React, { useState } from "react";
+import { evidenceItems } from "../data/projectData";
+import {
+  Filter,
+  Image as ImageIcon,
+  Video,
+  FileText,
+  Users,
+  ExternalLink,
+  ArrowRight,
+  Calendar,
+  ShieldCheck,
+  Play,
+  Eye,
   BookOpen,
   CheckCircle,
   Terminal,
-  Layers
-} from 'lucide-react';
+  Layers,
+} from "lucide-react";
 
 export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState("All");
 
-  const categories = ['All', 'Screenshots', 'Videos', 'Documents', 'Meetings'];
+  const categories = ["All", "Screenshots", "Videos", "Documents", "Meetings"];
 
-  const filteredItems = activeFilter === 'All' 
-    ? evidenceItems 
-    : evidenceItems.filter(item => item.category === activeFilter);
+  const filteredItems =
+    activeFilter === "All"
+      ? evidenceItems
+      : evidenceItems.filter((item) => item.category === activeFilter);
 
   // Helper to render realistic thumbnail representations for each proof type
   const renderThumbnail = (item) => {
     switch (item.thumbnailType) {
-      case 'architecture':
+      case "architecture":
         return (
           <div className="w-full h-44 bg-slate-900 p-3.5 flex flex-col justify-between text-white font-mono text-[10px] relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300">
             <div className="flex justify-between items-center text-slate-600 border-b border-slate-800 pb-1.5">
@@ -40,7 +41,7 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
               </span>
               <span className="text-emerald-400 text-[9px]">TIER-ISOLATED</span>
             </div>
-            
+
             {/* Schematic visual */}
             <div className="grid grid-cols-3 gap-2 py-2">
               <div className="border border-blue-500/40 bg-blue-950/40 rounded p-1.5 text-center">
@@ -48,11 +49,15 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
                 <div className="text-[8px] text-slate-600">IndexedDB</div>
               </div>
               <div className="border border-amber-500/40 bg-amber-950/40 rounded p-1.5 text-center">
-                <div className="text-amber-300 font-bold text-[9px]">GATEWAY</div>
+                <div className="text-amber-300 font-bold text-[9px]">
+                  GATEWAY
+                </div>
                 <div className="text-[8px] text-slate-600">Reverse Proxy</div>
               </div>
               <div className="border border-emerald-500/40 bg-emerald-950/40 rounded p-1.5 text-center">
-                <div className="text-emerald-300 font-bold text-[9px]">STORAGE</div>
+                <div className="text-emerald-300 font-bold text-[9px]">
+                  STORAGE
+                </div>
                 <div className="text-[8px] text-slate-600">PostgreSQL</div>
               </div>
             </div>
@@ -64,31 +69,45 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
           </div>
         );
 
-      case 'figma':
+      case "figma":
         return (
           <div className="w-full h-44 bg-slate-100 p-3.5 flex flex-col justify-between text-slate-800 relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300 border-b border-slate-200">
             <div className="flex justify-between items-center pb-1 border-b border-slate-200">
-              <span className="text-[10px] font-semibold text-slate-600">Figma Design System</span>
-              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-purple-100 text-purple-700">WCAG AAA</span>
+              <span className="text-[10px] font-semibold text-slate-600">
+                Figma Design System
+              </span>
+              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-purple-100 text-purple-700">
+                WCAG AAA
+              </span>
             </div>
             {/* Color swatches & typography preview */}
             <div className="space-y-2 py-2">
               <div className="flex space-x-1.5">
-                <div className="w-7 h-7 rounded bg-[#2563EB] shadow-xs flex items-center justify-center text-[8px] text-white font-mono">#25</div>
-                <div className="w-7 h-7 rounded bg-[#0F172A] shadow-xs flex items-center justify-center text-[8px] text-white font-mono">#0F</div>
-                <div className="w-7 h-7 rounded bg-[#FF9933] shadow-xs flex items-center justify-center text-[8px] text-white font-mono">#FF</div>
-                <div className="w-7 h-7 rounded bg-[#138808] shadow-xs flex items-center justify-center text-[8px] text-white font-mono">#13</div>
+                <div className="w-7 h-7 rounded bg-[#2563EB] shadow-xs flex items-center justify-center text-[8px] text-white font-mono">
+                  #25
+                </div>
+                <div className="w-7 h-7 rounded bg-[#0F172A] shadow-xs flex items-center justify-center text-[8px] text-white font-mono">
+                  #0F
+                </div>
+                <div className="w-7 h-7 rounded bg-[#FF9933] shadow-xs flex items-center justify-center text-[8px] text-white font-mono">
+                  #FF
+                </div>
+                <div className="w-7 h-7 rounded bg-[#138808] shadow-xs flex items-center justify-center text-[8px] text-white font-mono">
+                  #13
+                </div>
               </div>
               <div className="space-y-1">
                 <div className="h-2.5 w-3/4 bg-slate-300 rounded"></div>
                 <div className="h-2 w-1/2 bg-slate-200 rounded"></div>
               </div>
             </div>
-            <div className="text-[9px] text-slate-600 font-mono">Token file: theme.tokens.json</div>
+            <div className="text-[9px] text-slate-600 font-mono">
+              Token file: theme.tokens.json
+            </div>
           </div>
         );
 
-      case 'mobile_ui':
+      case "mobile_ui":
         return (
           <div className="w-full h-44 bg-gradient-to-b from-slate-900 to-slate-950 p-3 flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300">
             <div className="w-48 bg-white rounded-lg p-2 shadow-lg border border-slate-700 text-slate-900 space-y-1.5">
@@ -102,11 +121,13 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
               <div className="h-2 w-full bg-slate-200 rounded"></div>
               <div className="h-2 w-4/5 bg-slate-200 rounded"></div>
             </div>
-            <span className="absolute bottom-2 right-2 text-[9px] font-mono text-slate-600">PWA Viewport</span>
+            <span className="absolute bottom-2 right-2 text-[9px] font-mono text-slate-600">
+              PWA Viewport
+            </span>
           </div>
         );
 
-      case 'terminal_logs':
+      case "terminal_logs":
         return (
           <div className="w-full h-44 bg-slate-950 p-3 flex flex-col justify-between font-mono text-[10px] text-emerald-400 relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300">
             <div className="flex justify-between text-slate-600 text-[9px] border-b border-slate-800 pb-1">
@@ -122,16 +143,18 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
               <p className="text-emerald-400">[VERIFY] hmac signature: match</p>
               <p className="text-slate-600">[AUDIT] wrote 12 rows in 42ms</p>
             </div>
-            <div className="text-[9px] text-slate-600">Commit ref: git: d19f430</div>
+            <div className="text-[9px] text-slate-600">
+              Commit ref: git: d19f430
+            </div>
           </div>
         );
 
-      case 'video_demo':
-      case 'video_stress':
+      case "video_demo":
+      case "video_stress":
         return (
           <div className="w-full h-44 bg-slate-900 relative overflow-hidden flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-300">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
-            
+
             {/* Video Play Button Icon */}
             <div className="w-12 h-12 rounded-full bg-primaryBlue/90 hover:bg-primaryBlue text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform z-20">
               <Play className="w-5 h-5 fill-white ml-0.5" />
@@ -145,16 +168,20 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
             </div>
 
             <div className="absolute bottom-2.5 left-3 right-3 z-20 flex justify-between items-center text-[10px] text-slate-300">
-              <span className="font-medium truncate">Walkthrough Demonstration</span>
-              <span className="font-mono bg-black/50 px-1.5 py-0.5 rounded">04:32</span>
+              <span className="font-medium truncate">
+                Walkthrough Demonstration
+              </span>
+              <span className="font-mono bg-black/50 px-1.5 py-0.5 rounded">
+                04:32
+              </span>
             </div>
           </div>
         );
 
-      case 'doc_research':
-      case 'doc_benchmark':
-      case 'doc_architecture':
-      case 'doc_testing':
+      case "doc_research":
+      case "doc_benchmark":
+      case "doc_architecture":
+      case "doc_testing":
       default:
         return (
           <div className="w-full h-44 bg-slate-50 p-4 flex flex-col justify-between border-b border-slate-200 relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300">
@@ -186,23 +213,25 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
 
   const getBadgeStyle = (category) => {
     switch (category) {
-      case 'Screenshots':
-        return 'bg-blue-50 text-blue-700 border-blue-200';
-      case 'Videos':
-        return 'bg-rose-50 text-rose-700 border-rose-200';
-      case 'Documents':
-        return 'bg-emerald-50 text-emerald-700 border-emerald-200';
-      case 'Meetings':
-        return 'bg-amber-50 text-amber-700 border-amber-200';
+      case "Screenshots":
+        return "bg-blue-50 text-blue-700 border-blue-200";
+      case "Videos":
+        return "bg-rose-50 text-rose-700 border-rose-200";
+      case "Documents":
+        return "bg-emerald-50 text-emerald-700 border-emerald-200";
+      case "Meetings":
+        return "bg-amber-50 text-amber-700 border-amber-200";
       default:
-        return 'bg-slate-100 text-slate-700 border-slate-200';
+        return "bg-slate-100 text-slate-700 border-slate-200";
     }
   };
 
   return (
-    <section id="evidence" className="py-16 sm:py-24 bg-white border-b border-borderSlate">
+    <section
+      id="evidence"
+      className="py-16 sm:py-24 bg-white border-b border-borderSlate"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-slate-100 gap-6">
           <div className="space-y-2">
@@ -225,12 +254,16 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
                 <BookOpen className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xs font-bold text-slate-900">Research &amp; Specs Dossier</p>
-                <p className="text-[11px] text-slate-700">6 Local Markdown technical whitepapers</p>
+                <p className="text-xs font-bold text-slate-900">
+                  Research &amp; Specs Dossier
+                </p>
+                <p className="text-[11px] text-slate-700">
+                  6 Local Markdown technical whitepapers
+                </p>
               </div>
             </div>
             <button
-              onClick={() => onOpenDoc && onOpenDoc('01-problem-understanding')}
+              onClick={() => onOpenDoc && onOpenDoc("01-problem-understanding")}
               className="px-3 py-1.5 bg-primaryBlue hover:bg-primaryBlue-dark text-white text-xs font-semibold rounded-lg shadow-xs transition-colors shrink-0 flex items-center space-x-1"
             >
               <span>Read Research</span>
@@ -247,17 +280,21 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
               onClick={() => setActiveFilter(cat)}
               className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all ${
                 activeFilter === cat
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900'
+                  ? "bg-slate-900 text-white shadow-xs"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900"
               }`}
             >
-              {cat === 'All' ? 'All Proofs' : cat}
-              <span className={`ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] ${
-                activeFilter === cat ? 'bg-slate-700 text-slate-200' : 'bg-slate-200 text-slate-600'
-              }`}>
-                {cat === 'All' 
-                  ? evidenceItems.length 
-                  : evidenceItems.filter(i => i.category === cat).length}
+              {cat === "All" ? "All Proofs" : cat}
+              <span
+                className={`ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] ${
+                  activeFilter === cat
+                    ? "bg-slate-700 text-slate-200"
+                    : "bg-slate-200 text-slate-600"
+                }`}
+              >
+                {cat === "All"
+                  ? evidenceItems.length
+                  : evidenceItems.filter((i) => i.category === cat).length}
               </span>
             </button>
           ))}
@@ -271,7 +308,7 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
               className="group bg-white rounded-xl border border-borderSlate overflow-hidden shadow-2xs hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               {/* Thumbnail Container */}
-              <div 
+              <div
                 className="cursor-pointer overflow-hidden relative"
                 onClick={() => {
                   if (item.docSlug && onOpenDoc) {
@@ -288,7 +325,9 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
               <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full border ${getBadgeStyle(item.category)}`}>
+                    <span
+                      className={`text-[11px] font-bold px-2 py-0.5 rounded-full border ${getBadgeStyle(item.category)}`}
+                    >
                       {item.badge}
                     </span>
                     <span className="text-[11px] text-slate-600 flex items-center space-x-1">
@@ -325,16 +364,14 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
 
                     <button
                       onClick={() => onSelectProof(item)}
-                      className="px-3 py-1.5 bg-blue-50 hover:bg-primaryBlue text-primaryBlue hover:text-white text-xs font-semibold rounded-md border border-blue-200/80 hover:border-primaryBlue transition-all flex items-center space-x-1"
+                      className="px-3 py-1.5 cursor-pointer bg-blue-50  text-primaryBlue  text-xs font-semibold rounded-md border  transition-all flex items-center space-x-1"
                     >
                       <span>View Proof</span>
                       <ArrowRight className="w-3 h-3" />
                     </button>
                   </div>
                 </div>
-
               </div>
-
             </div>
           ))}
         </div>
@@ -343,10 +380,10 @@ export default function EvidenceGallery({ onSelectProof, onOpenDoc }) {
         <div className="mt-12 text-center text-xs text-slate-700 bg-slate-50 border border-slate-200 rounded-xl p-4 max-w-2xl mx-auto flex items-center justify-center space-x-2">
           <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
           <span>
-            Every piece of evidence links to verifiable local source code commits, meeting minutes, and research markdown documents.
+            Every piece of evidence links to verifiable local source code
+            commits, meeting minutes, and research markdown documents.
           </span>
         </div>
-
       </div>
     </section>
   );

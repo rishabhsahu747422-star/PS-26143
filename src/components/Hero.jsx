@@ -1,26 +1,37 @@
-import React from 'react';
-import { ArrowRight, ExternalLink, Calendar, CheckCircle2, Activity, Layers, Terminal, Sparkles, ShieldAlert } from 'lucide-react';
-import { projectMeta } from '../data/projectData';
+import React from "react";
+import {
+  ArrowRight,
+  ExternalLink,
+  Calendar,
+  CheckCircle2,
+  Activity,
+  Layers,
+  Terminal,
+  Sparkles,
+  ShieldAlert,
+} from "lucide-react";
+import { projectMeta } from "../data/projectData";
 
-export default function Hero({ onExploreJourney, onViewEvidence, onOpenPrototype }) {
+export default function Hero({
+  onExploreJourney,
+  onViewEvidence,
+  onOpenPrototype,
+}) {
   return (
     <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 border-b border-borderSlate bg-gradient-to-b from-white via-slate-50/50 to-[#F8FAFC]">
-      
       {/* Background Subtle Grid Pattern */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(#0F172A 1px, transparent 1px)`,
-          backgroundSize: '24px 24px'
+          backgroundSize: "24px 24px",
         }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
           {/* LEFT COLUMN: Pitch, Headlines, CTAs */}
           <div className="lg:col-span-6 space-y-6 sm:space-y-7 text-left">
-            
             {/* Small Label with subtle Saffron & Blue accents */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-50/80 border border-blue-200/80 text-primaryBlue text-xs sm:text-sm font-semibold tracking-wide">
               <span className="w-2 h-2 rounded-full bg-saffron inline-block"></span>
@@ -69,16 +80,8 @@ export default function Hero({ onExploreJourney, onViewEvidence, onOpenPrototype
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <button
-                onClick={onExploreJourney}
-                className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-primaryBlue hover:bg-primaryBlue-dark text-white text-sm sm:text-base font-semibold shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <span>Explore Our Journey</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <button
                 onClick={onViewEvidence}
-                className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-sm sm:text-base font-semibold border border-borderSlate shadow-2xs hover:border-slate-300 hover:shadow-xs transition-all"
+                className="inline-flex cursor-pointer items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-sm sm:text-base font-semibold border border-borderSlate shadow-2xs hover:border-slate-300 hover:shadow-xs transition-all"
               >
                 <span>View Live Evidence</span>
                 <ExternalLink className="w-4 h-4 text-primaryBlue" />
@@ -100,25 +103,24 @@ export default function Hero({ onExploreJourney, onViewEvidence, onOpenPrototype
                 <span>Zero Faked Metrics</span>
               </div>
             </div>
-
           </div>
 
           {/* RIGHT COLUMN: Professional Student Engineering Pod Visual + Floating Glass Cards */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
-            
             {/* Background Glow */}
             <div className="absolute -inset-4 bg-gradient-to-tr from-blue-100/60 via-slate-100/40 to-amber-100/40 rounded-3xl filter blur-2xl opacity-70 -z-10"></div>
 
             {/* Main Stage Card Container */}
             <div className="relative w-full max-w-lg lg:max-w-none bg-white/95 rounded-2xl border border-slate-200 shadow-card p-4 sm:p-6 overflow-visible">
-              
               {/* Top Window Bar */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
                   <div className="w-3 h-3 rounded-full bg-amber-400"></div>
                   <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
-                  <span className="text-xs font-mono text-slate-600 pl-2">sih-2026-workspace/prototype</span>
+                  <span className="text-xs font-mono text-slate-600 pl-2">
+                    sih-2026-workspace/prototype
+                  </span>
                 </div>
                 <span className="text-[11px] font-mono text-primaryBlue bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
                   Sprint #3 Active
@@ -127,10 +129,8 @@ export default function Hero({ onExploreJourney, onViewEvidence, onOpenPrototype
 
               {/* Rich Vector Graphic: Student Hackathon Dev Team Collaborating */}
               <div className="relative rounded-xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-4 sm:p-5 text-white overflow-hidden shadow-inner min-h-[300px] flex flex-col justify-between">
-                
                 {/* Visual Dev Environment: Terminal + Live Preview split */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 z-10">
-                  
                   {/* Terminal Screen Mockup */}
                   <div className="rounded-lg bg-slate-950/90 border border-slate-800 p-3 font-mono text-[11px] space-y-1.5">
                     <div className="flex items-center justify-between text-[10px] text-slate-600 pb-1 border-b border-slate-800/80">
@@ -140,20 +140,37 @@ export default function Hero({ onExploreJourney, onViewEvidence, onOpenPrototype
                       </span>
                       <span className="text-emerald-400">PASS</span>
                     </div>
-                    <p className="text-slate-600">[08:42:15] <span className="text-blue-300">indexedDB</span>: 12 queued</p>
-                    <p className="text-slate-600">[08:42:16] <span className="text-amber-300">network</span>: offline simulated</p>
-                    <p className="text-slate-600">[08:42:19] <span className="text-emerald-400">network</span>: 4G reconnected</p>
-                    <p className="text-emerald-300">[08:42:20] sync batch: 12/12 verified</p>
-                    <p className="text-slate-600 font-mono text-[10px] text-slate-300">sha256: 8a4f91b..[OK]</p>
+                    <p className="text-slate-600">
+                      [08:42:15]{" "}
+                      <span className="text-blue-300">indexedDB</span>: 12
+                      queued
+                    </p>
+                    <p className="text-slate-600">
+                      [08:42:16] <span className="text-amber-300">network</span>
+                      : offline simulated
+                    </p>
+                    <p className="text-slate-600">
+                      [08:42:19]{" "}
+                      <span className="text-emerald-400">network</span>: 4G
+                      reconnected
+                    </p>
+                    <p className="text-emerald-300">
+                      [08:42:20] sync batch: 12/12 verified
+                    </p>
+                    <p className="text-slate-600 font-mono text-[10px] text-slate-300">
+                      sha256: 8a4f91b..[OK]
+                    </p>
                   </div>
 
                   {/* Architecture & UI Wireframe Preview */}
                   <div className="rounded-lg bg-slate-950/90 border border-slate-800 p-3 flex flex-col justify-between">
                     <div className="flex items-center justify-between text-[10px] text-slate-600 pb-1 border-b border-slate-800/80">
-                      <span className="text-slate-300 font-medium">Device Simulation</span>
+                      <span className="text-slate-300 font-medium">
+                        Device Simulation
+                      </span>
                       <span className="text-xs text-blue-400">PWA 360x640</span>
                     </div>
-                    
+
                     {/* Mini Phone Frame representation */}
                     <div className="my-2 p-2 rounded bg-slate-900 border border-slate-700/60 space-y-1.5">
                       <div className="h-2 w-12 bg-blue-500 rounded-sm"></div>
@@ -174,7 +191,6 @@ export default function Hero({ onExploreJourney, onViewEvidence, onOpenPrototype
                       <span className="text-emerald-400">Latency: 120ms</span>
                     </div>
                   </div>
-
                 </div>
 
                 {/* Team Pod Graphic representation at the bottom of the card */}
@@ -196,8 +212,12 @@ export default function Hero({ onExploreJourney, onViewEvidence, onOpenPrototype
                       </div>
                     </div>
                     <div className="text-left">
-                      <p className="text-xs font-semibold text-white">Team 26175 Engineering Pod</p>
-                      <p className="text-[11px] text-slate-600">6 Members • Distributed Development</p>
+                      <p className="text-xs font-semibold text-white">
+                        Team 26175 Engineering Pod
+                      </p>
+                      <p className="text-[11px] text-slate-600">
+                        6 Members • Distributed Development
+                      </p>
                     </div>
                   </div>
 
@@ -258,22 +278,23 @@ export default function Hero({ onExploreJourney, onViewEvidence, onOpenPrototype
                 <div className="space-y-1 text-left min-w-[120px]">
                   <div className="flex justify-between items-center text-[10px] font-bold text-slate-600 uppercase">
                     <span>Progress</span>
-                    <span className="text-primaryBlue font-extrabold">{projectMeta.overallProgress}%</span>
+                    <span className="text-primaryBlue font-extrabold">
+                      {projectMeta.overallProgress}%
+                    </span>
                   </div>
                   <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div 
+                    <div
                       className="h-full bg-primaryBlue rounded-full transition-all duration-1000"
                       style={{ width: `${projectMeta.overallProgress}%` }}
                     ></div>
                   </div>
-                  <span className="block text-[9px] text-slate-600">Sprint 3 of 4</span>
+                  <span className="block text-[9px] text-slate-600">
+                    Sprint 3 of 4
+                  </span>
                 </div>
               </div>
-
             </div>
-
           </div>
-
         </div>
       </div>
     </section>
