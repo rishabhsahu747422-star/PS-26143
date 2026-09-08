@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* SIH 2026 Core Theme Palette Utilities */
+.bg-primaryBlue { background-color: #2563EB; }
+.bg-primaryBlue-dark { background-color: #1D4ED8; }
+.bg-primaryBlue-light { background-color: #3B82F6; }
+.hover\:bg-primaryBlue:hover { background-color: #2563EB; }
+.hover\:bg-primaryBlue-dark:hover { background-color: #1D4ED8; }
+.hover\:bg-primaryBlue-light:hover { background-color: #3B82F6; }
+
+.text-primaryBlue { color: #2563EB; }
+.hover\:text-primaryBlue:hover { color: #2563EB; }
+.hover\:text-primaryBlue-dark:hover { color: #1D4ED8; }
+
+.border-primaryBlue { border-color: #2563EB; }
+.hover\:border-primaryBlue:hover { border-color: #2563EB; }
+
+.bg-lightBlue { background-color: #EFF6FF; }
+.hover\:bg-lightBlue:hover { background-color: #EFF6FF; }
+
+.bg-saffron { background-color: #FF9933; }
+.text-saffron { color: #FF9933; }
+
+.bg-indiaGreen { background-color: #138808; }
+.text-indiaGreen { color: #138808; }
+
+.border-borderSlate { border-color: #E2E8F0; }
+.hover\:border-borderSlate:hover { border-color: #E2E8F0; }
+
+.text-mainText { color: #0F172A; }
+
+.shadow-soft { box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05); }
+.shadow-card { box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08); }
+.shadow-lift { box-shadow: 0 20px 35px -8px rgba(37, 99, 235, 0.12); }
+
+body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom subtle animations */
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes livePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 5s ease-in-out infinite;
+}
+
+.animate-subtle-float-delayed {
+  animation: subtleFloat 5s ease-in-out 2.5s infinite;
+}
+
+.animate-live-pulse {
+  animation: livePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom clean scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Glass card styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
